@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DownloadingMultipleDocument.DescriptionPage" Padding="0,0,0,0"
+             xmlns:local="clr-namespace:DownloadingMultipleDocument;assembly=DownloadingMultipleDocument">
+  <StackLayout Orientation="Vertical" BackgroundColor="White">
+    <Grid BackgroundColor="Gray" VerticalOptions="FillAndExpand">
+      <Grid.ColumnSpacing>
+        <OnIdiom x:TypeArguments="x:Double"
+                 Phone="20"
+                 Tablet="40"/>
+      </Grid.ColumnSpacing>
+      <Grid.RowSpacing>
+        <OnIdiom x:TypeArguments="x:Double"
+                 Phone="1"
+                 Tablet="2"/>
+      </Grid.RowSpacing>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="0.2*" />
+        <RowDefinition Height="0.75*" />
+        <RowDefinition Height="0.5*" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+      <Grid Grid.Row="0" BackgroundColor="White"/>
+      <Grid Grid.Row="1" BackgroundColor="White">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="2*" />
+          <ColumnDefinition Width="4*" />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+          <Grid.Padding>
+            <OnIdiom x:TypeArguments="Thickness"
+            Phone="10,0,0,0"
+            Tablet="10, 10, 10, 10"/>
+          </Grid.Padding>
+          <Image x:Name="image" Aspect="AspectFit" HorizontalOptions="Start" Source="temp.png" />
+        </Grid>
+        <Grid Grid.Column="1">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="0.75*" />
+            <RowDefinition Height="1.5*" />
+            <RowDefinition Height="*" />
+          </Grid.RowDefinitions>
+          <Grid  Grid.Row="0">
+            <Grid.Padding>
+              <OnIdiom x:TypeArguments="Thickness"
+              Phone="0, -10, 0,-10"
+              Tablet="0"/>
+            </Grid.Padding>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="2*" />
+              <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label TextColor="Black" YAlign="End" XAlign="Start" Text="Test DocumentName" FontFamily="Calibry" FontAttributes="Bold"  FontSize="20" Grid.Row="0" Grid.Column="0" x:Name="documentName"/>
+            <Label Text="NEW" FontFamily="Calibry" FontSize="15" FontAttributes="Bold" Grid.Row="0" Grid.Column="1" YAlign="End" TextColor="Green"/>
+          </Grid>
+          <Grid  Grid.Row="1">
+            <Label x:Name="authorName" YAlign="Start" FontAttributes="Bold" FontSize="15" TextColor="Gray" Text="by Test Author"/>
+          </Grid>
+          <Grid  Grid.Row="2">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="2*" />
+              <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid  Grid.Row="0">
+              <Grid.Padding>
+                <OnIdiom x:TypeArguments="Thickness"
+                Phone="0, -10, 0, 10"
+                Tablet="0, 10, 90, 0"/>
+              </Grid.Padding>
+              <Button Text="DOWNLOAD" Grid.Column="0" TextColor="White" BackgroundColor="Green" FontAttributes="Bold" Clicked="OnClicked" x:Name="ViewDownLoad"/>
+              <ProgressBar x:Name="downloadProgress" IsVisible="false"></ProgressBar>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+    </Grid>
+  </StackLayout>
+</ContentPage>

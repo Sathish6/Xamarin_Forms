@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Grid xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DownloadingMultipleDocument.TileGrid" BackgroundColor="White">
+  <Grid.RowDefinitions>
+    <RowDefinition Height="6*" />
+    <RowDefinition Height="*" />
+    <RowDefinition Height="*" />
+  </Grid.RowDefinitions>
+  <Grid Grid.Row="0" Padding="10,10,10,10">
+    <Grid.GestureRecognizers>
+      <TapGestureRecognizer
+              Tapped="OnTapGestureRecognizerTapped"
+              NumberOfTapsRequired="1" />
+    </Grid.GestureRecognizers>
+    <Label x:Name="navigatePage" TextColor="Black" FontSize="30" Text="Tap to Download" Grid.Row="0" Grid.Column="0" YAlign="Center" XAlign="Center"/>
+  </Grid>
+  <Grid Grid.Row="1">
+    <Grid.Padding>
+      <OnIdiom x:TypeArguments="Thickness"
+      Phone="15, 0, 0, 0"
+      Tablet="15, 0, 0, 0"/>
+    </Grid.Padding>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="1.25*" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="4*" />
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+    <Label x:Name="documentName" TextColor="Black" Grid.Row="0" Grid.Column="0" YAlign="Start"/>
+    <Label x:Name="author" TextColor="Gray" Grid.Row="1" Grid.Column="0" YAlign="Start"/>
+  </Grid>
+  <Grid Grid.Row="2" Padding="0,0,0,0">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="0.1*" />
+      <ColumnDefinition Width="0.2*" />
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+  </Grid>
+</Grid>
